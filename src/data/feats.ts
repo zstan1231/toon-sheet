@@ -1,0 +1,650 @@
+// D&D 3.5e Core Feats
+// Source: Player's Handbook
+
+export interface FeatDefinition {
+  name: string;
+  prerequisites: string;
+  benefit: string;
+  special: string;
+}
+
+export const CORE_FEATS: FeatDefinition[] = [
+  {
+    name: 'Acrobatic',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Jump checks and Tumble checks.',
+    special: '',
+  },
+  {
+    name: 'Agile',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Balance checks and Escape Artist checks.',
+    special: '',
+  },
+  {
+    name: 'Alertness',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Listen checks and Spot checks.',
+    special: 'The alertness feat is granted by a familiar.',
+  },
+  {
+    name: 'Animal Affinity',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Handle Animal checks and Ride checks.',
+    special: '',
+  },
+  {
+    name: 'Armor Proficiency (Heavy)',
+    prerequisites: 'Armor Proficiency (Light), Armor Proficiency (Medium)',
+    benefit: 'You are proficient with heavy armor. See also armor proficiency.',
+    special: 'Fighters and paladins automatically have Armor Proficiency (Heavy).',
+  },
+  {
+    name: 'Armor Proficiency (Light)',
+    prerequisites: 'None',
+    benefit: 'You are proficient with light armor. See also armor proficiency.',
+    special: '',
+  },
+  {
+    name: 'Armor Proficiency (Medium)',
+    prerequisites: 'Armor Proficiency (Light)',
+    benefit: 'You are proficient with medium armor. See also armor proficiency.',
+    special: '',
+  },
+  {
+    name: 'Athletic',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Climb checks and Swim checks.',
+    special: '',
+  },
+  {
+    name: 'Augment Summoning',
+    prerequisites: 'Spell Focus (Conjuration)',
+    benefit: 'Each creature you conjure with any summon spell gains a +4 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.',
+    special: '',
+  },
+  {
+    name: 'Blind-Fight',
+    prerequisites: 'None',
+    benefit: 'In melee, every time you miss because of concealment, you can reroll your miss chance percentile roll one time to see if you actually hit. You are not penalized for fighting while blinded.',
+    special: '',
+  },
+  {
+    name: 'Brew Potion',
+    prerequisites: 'Caster level 3rd',
+    benefit: 'You can create a potion of any 3rd-level or lower spell that you know and that targets one or more creatures. Brewing a potion takes one day.',
+    special: '',
+  },
+  {
+    name: 'Cleave',
+    prerequisites: 'Str 13, Power Attack',
+    benefit: 'If you deal a creature enough damage to make it drop (typically by dropping it to below 0 hit points or killing it), you get an immediate, extra melee attack against another creature within reach. You can use this ability once per round.',
+    special: '',
+  },
+  {
+    name: 'Combat Casting',
+    prerequisites: 'None',
+    benefit: 'You get a +4 bonus on Concentration checks made to cast a spell or use a spell-like ability while on the defensive or while you are grappling or pinned.',
+    special: '',
+  },
+  {
+    name: 'Combat Expertise',
+    prerequisites: 'Int 13',
+    benefit: 'When you use the attack action or the full attack action in melee, you can take a penalty of as much as –5 on your attack roll and add the same number (+5 or less) as a dodge bonus to your Armor Class.',
+    special: '',
+  },
+  {
+    name: 'Combat Reflexes',
+    prerequisites: 'None',
+    benefit: 'You may make a number of additional attacks of opportunity equal to your Dexterity bonus. You can still make only one attack of opportunity per opportunity.',
+    special: '',
+  },
+  {
+    name: 'Craft Magic Arms and Armor',
+    prerequisites: 'Caster level 5th',
+    benefit: 'You can create magic weapons, armor, or shields. Enhancing a weapon, suit of armor, or shield takes one day for each 1,000 gp in the price of its magical features.',
+    special: '',
+  },
+  {
+    name: 'Craft Rod',
+    prerequisites: 'Caster level 9th',
+    benefit: 'You can create magic rods. Crafting a rod takes one day for each 1,000 gp in its base price.',
+    special: '',
+  },
+  {
+    name: 'Craft Staff',
+    prerequisites: 'Caster level 12th',
+    benefit: 'You can create a magic staff. Crafting a staff takes one day for each 1,000 gp in its base price.',
+    special: '',
+  },
+  {
+    name: 'Craft Wand',
+    prerequisites: 'Caster level 5th',
+    benefit: 'You can create a magic wand. Crafting a wand takes one day for each 1,000 gp in its base price.',
+    special: '',
+  },
+  {
+    name: 'Craft Wondrous Item',
+    prerequisites: 'Caster level 3rd',
+    benefit: 'You can create a wondrous item. Crafting a wondrous item takes one day for each 1,000 gp in its base price.',
+    special: '',
+  },
+  {
+    name: 'Deceitful',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Disguise checks and Forgery checks.',
+    special: '',
+  },
+  {
+    name: 'Deflect Arrows',
+    prerequisites: 'Dex 13, Improved Unarmed Strike',
+    benefit: 'You must have at least one hand free (holding nothing) to use this feat. Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it.',
+    special: '',
+  },
+  {
+    name: 'Deft Hands',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Sleight of Hand checks and Use Rope checks.',
+    special: '',
+  },
+  {
+    name: 'Diehard',
+    prerequisites: 'Endurance',
+    benefit: 'When reduced to between –1 and –9 hit points, you automatically become stable. You don\'t have to roll d% to see if you lose 1 hit point each round.',
+    special: '',
+  },
+  {
+    name: 'Diligent',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Appraise checks and Decipher Script checks.',
+    special: '',
+  },
+  {
+    name: 'Dodge',
+    prerequisites: 'Dex 13',
+    benefit: 'During your action, you designate an opponent and receive a +1 dodge bonus to Armor Class against attacks from that opponent. You can select a new opponent on any action.',
+    special: '',
+  },
+  {
+    name: 'Empower Spell',
+    prerequisites: 'None',
+    benefit: 'All variable, numeric effects of an empowered spell are increased by one-half.',
+    special: 'An empowered spell uses up a spell slot two levels higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Endurance',
+    prerequisites: 'None',
+    benefit: 'You gain a +4 bonus on the following checks and saves: Swim checks made to resist nonlethal damage, Constitution checks made to continue running, Constitution checks made to avoid nonlethal damage from a forced march, Constitution checks made to hold your breath, Constitution checks made to avoid nonlethal damage from starvation or thirst, Fortitude saves made to avoid nonlethal damage from hot or cold environments, and Fortitude saves made to resist damage from suffocation.',
+    special: '',
+  },
+  {
+    name: 'Enlarge Spell',
+    prerequisites: 'None',
+    benefit: 'You can alter a spell with a range of close, medium, or long to increase its range by 100%.',
+    special: 'An enlarged spell uses up a spell slot one level higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Eschew Materials',
+    prerequisites: 'None',
+    benefit: 'You can cast any spell that has a material component costing 1 gp or less without needing that component.',
+    special: '',
+  },
+  {
+    name: 'Extend Spell',
+    prerequisites: 'None',
+    benefit: 'An extended spell lasts twice as long as normal. A spell with a duration of concentration, instantaneous, or permanent is not affected by this feat.',
+    special: 'An extended spell uses up a spell slot one level higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Extra Turning',
+    prerequisites: 'Ability to turn or rebuke undead',
+    benefit: 'Each time you take this feat, you can use your ability to turn or rebuke undead four more times per day than normal.',
+    special: 'You can take this feat multiple times. Its effects stack.',
+  },
+  {
+    name: 'Far Shot',
+    prerequisites: 'Point Blank Shot',
+    benefit: 'When you use a projectile weapon, its range increment increases by one-half (multiply by 1-1/2). When you use a thrown weapon, its range increment is doubled.',
+    special: '',
+  },
+  {
+    name: 'Forge Ring',
+    prerequisites: 'Caster level 12th',
+    benefit: 'You can create magic rings. Crafting a ring takes one day for each 1,000 gp in its base price.',
+    special: '',
+  },
+  {
+    name: 'Great Cleave',
+    prerequisites: 'Str 13, Cleave, Power Attack, BAB +4',
+    benefit: 'This feat works like Cleave, except that there is no limit to the number of times you can use it per round.',
+    special: '',
+  },
+  {
+    name: 'Great Fortitude',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Fortitude saving throws.',
+    special: '',
+  },
+  {
+    name: 'Greater Spell Focus',
+    prerequisites: 'Spell Focus',
+    benefit: 'Add +1 to the Difficulty Class for all saving throws against spells from the school of magic you select. This bonus stacks with the bonus from Spell Focus.',
+    special: 'You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.',
+  },
+  {
+    name: 'Greater Spell Penetration',
+    prerequisites: 'Spell Penetration',
+    benefit: 'You get a +4 bonus on caster level checks (1d20 + caster level) made to overcome a creature\'s spell resistance. This bonus stacks with the one from Spell Penetration.',
+    special: '',
+  },
+  {
+    name: 'Greater Two-Weapon Fighting',
+    prerequisites: 'Dex 19, Improved Two-Weapon Fighting, Two-Weapon Fighting, BAB +11',
+    benefit: 'You get a third attack with your off-hand weapon, albeit at a –10 penalty.',
+    special: '',
+  },
+  {
+    name: 'Greater Weapon Focus',
+    prerequisites: 'Proficiency with selected weapon, Weapon Focus, Fighter level 8th',
+    benefit: 'You gain a +1 bonus on all attack rolls you make using the selected weapon. This bonus stacks with other bonuses on attack rolls, including the one from Weapon Focus.',
+    special: 'You can gain Greater Weapon Focus multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.',
+  },
+  {
+    name: 'Greater Weapon Specialization',
+    prerequisites: 'Proficiency with selected weapon, Greater Weapon Focus, Weapon Focus, Weapon Specialization, Fighter level 12th',
+    benefit: 'You gain a +2 bonus on all damage rolls you make using the selected weapon. This bonus stacks with other bonuses on damage rolls, including the one from Weapon Specialization.',
+    special: '',
+  },
+  {
+    name: 'Heighten Spell',
+    prerequisites: 'None',
+    benefit: 'A heightened spell has a higher spell level than normal (up to a maximum of 9th level). Unlike other metamagic feats, Heighten Spell actually increases the effective level of the spell that it modifies.',
+    special: '',
+  },
+  {
+    name: 'Improved Bull Rush',
+    prerequisites: 'Str 13, Power Attack',
+    benefit: 'When you perform a bull rush you do not provoke an attack of opportunity from the defender. You also gain a +4 bonus on the opposed Strength check you make to push back the defender.',
+    special: '',
+  },
+  {
+    name: 'Improved Counterspell',
+    prerequisites: 'None',
+    benefit: 'When counterspelling, you may use a spell of the same school that is one or more spell levels higher than the target spell.',
+    special: '',
+  },
+  {
+    name: 'Improved Critical',
+    prerequisites: 'Proficiency with weapon, BAB +8',
+    benefit: 'When using the weapon you selected, your threat range is doubled.',
+    special: 'You can gain Improved Critical multiple times. The effects do not stack. Each time you take the feat, it applies to a new type of weapon.',
+  },
+  {
+    name: 'Improved Disarm',
+    prerequisites: 'Int 13, Combat Expertise',
+    benefit: 'You do not provoke an attack of opportunity when you attempt to disarm an opponent, nor does the opponent have a chance to disarm you. You also gain a +4 bonus on the opposed attack roll you make to disarm your opponent.',
+    special: '',
+  },
+  {
+    name: 'Improved Familiar',
+    prerequisites: 'Ability to acquire a new familiar, compatible alignment, sufficiently high level',
+    benefit: 'When choosing a familiar, the creatures listed here are also eligible to you.',
+    special: '',
+  },
+  {
+    name: 'Improved Feint',
+    prerequisites: 'Int 13, Combat Expertise',
+    benefit: 'You can make a Bluff check to feint in combat as a move action.',
+    special: '',
+  },
+  {
+    name: 'Improved Grapple',
+    prerequisites: 'Dex 13, Improved Unarmed Strike',
+    benefit: 'You do not provoke an attack of opportunity when you make a touch attack to start a grapple. You also gain a +4 bonus on all grapple checks, regardless of whether you started the grapple.',
+    special: '',
+  },
+  {
+    name: 'Improved Initiative',
+    prerequisites: 'None',
+    benefit: 'You get a +4 bonus on initiative checks.',
+    special: '',
+  },
+  {
+    name: 'Improved Overrun',
+    prerequisites: 'Str 13, Power Attack',
+    benefit: 'When you attempt to overrun an opponent, the target may not choose to avoid you. You also gain a +4 bonus on the Strength check you make to knock down your opponent.',
+    special: '',
+  },
+  {
+    name: 'Improved Precise Shot',
+    prerequisites: 'Dex 19, Point Blank Shot, Precise Shot, BAB +11',
+    benefit: 'Your ranged attacks ignore the AC bonus granted to targets by anything less than total cover, and the miss chance granted to targets by anything less than total concealment.',
+    special: '',
+  },
+  {
+    name: 'Improved Shield Bash',
+    prerequisites: 'Shield Proficiency',
+    benefit: 'When you perform a shield bash, you may still apply the shield\'s shield bonus to your AC.',
+    special: '',
+  },
+  {
+    name: 'Improved Sunder',
+    prerequisites: 'Str 13, Power Attack',
+    benefit: 'When you strike at an opponent\'s weapon or shield, you do not provoke an attack of opportunity. You also gain a +4 bonus on any attack roll you make to attack an object held or carried by another character.',
+    special: '',
+  },
+  {
+    name: 'Improved Trip',
+    prerequisites: 'Int 13, Combat Expertise',
+    benefit: 'You do not provoke an attack of opportunity when you attempt to trip an opponent while you are unarmed. You also gain a +4 bonus on your Strength check to trip your opponent. If you trip an opponent in melee combat, you immediately get a melee attack against that opponent as if you hadn\'t used your attack for the trip attempt.',
+    special: '',
+  },
+  {
+    name: 'Improved Two-Weapon Fighting',
+    prerequisites: 'Dex 17, Two-Weapon Fighting, BAB +6',
+    benefit: 'In addition to the standard single extra attack you get with an off-hand weapon, you get a second attack with it, albeit at a –5 penalty.',
+    special: '',
+  },
+  {
+    name: 'Improved Unarmed Strike',
+    prerequisites: 'None',
+    benefit: 'You are considered to be armed even when unarmed. You do not provoke attacks of opportunity when you attack foes while unarmed.',
+    special: '',
+  },
+  {
+    name: 'Investigator',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Gather Information checks and Search checks.',
+    special: '',
+  },
+  {
+    name: 'Iron Will',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Will saving throws.',
+    special: '',
+  },
+  {
+    name: 'Leadership',
+    prerequisites: 'Character level 6th',
+    benefit: 'Having this feat enables the character to attract a cohort and followers to join him in his adventures.',
+    special: '',
+  },
+  {
+    name: 'Lightning Reflexes',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Reflex saving throws.',
+    special: '',
+  },
+  {
+    name: 'Magical Aptitude',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Spellcraft checks and Use Magic Device checks.',
+    special: '',
+  },
+  {
+    name: 'Manyshot',
+    prerequisites: 'Dex 17, Point Blank Shot, Rapid Shot, BAB +6',
+    benefit: 'As a standard action, you may fire two arrows at a single opponent within 30 feet. Both arrows use the same attack roll (with a –4 penalty) to determine success and deal damage normally (but see Special).',
+    special: 'Regardless of the number of arrows you fire, you apply precision-based damage (such as sneak attack damage) only once.',
+  },
+  {
+    name: 'Maximize Spell',
+    prerequisites: 'None',
+    benefit: 'All variable, numeric effects of a spell modified by this feat are maximized.',
+    special: 'A maximized spell uses up a spell slot three levels higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Mobility',
+    prerequisites: 'Dex 13, Dodge',
+    benefit: 'You get a +4 dodge bonus to Armor Class against attacks of opportunity caused when you move out of or within a threatened area.',
+    special: '',
+  },
+  {
+    name: 'Mounted Archery',
+    prerequisites: 'Ride 1 rank, Mounted Combat',
+    benefit: 'The penalty you take when using a ranged weapon while mounted is halved: –2 instead of –4 if your mount is taking a double move, and –4 instead of –8 if your mount is running.',
+    special: '',
+  },
+  {
+    name: 'Mounted Combat',
+    prerequisites: 'Ride 1 rank',
+    benefit: 'Once per round when your mount is hit in combat, you may attempt a Ride check (as a reaction) to negate the hit.',
+    special: '',
+  },
+  {
+    name: 'Natural Spell',
+    prerequisites: 'Wis 13, wild shape ability',
+    benefit: 'You can complete the verbal and somatic components of spells while in a wild shape.',
+    special: '',
+  },
+  {
+    name: 'Negotiator',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Diplomacy checks and Sense Motive checks.',
+    special: '',
+  },
+  {
+    name: 'Nimble Fingers',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Disable Device checks and Open Lock checks.',
+    special: '',
+  },
+  {
+    name: 'Persuasive',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Bluff checks and Intimidate checks.',
+    special: '',
+  },
+  {
+    name: 'Point Blank Shot',
+    prerequisites: 'None',
+    benefit: 'You get a +1 bonus on attack and damage rolls with ranged weapons at ranges of up to 30 feet.',
+    special: '',
+  },
+  {
+    name: 'Power Attack',
+    prerequisites: 'Str 13',
+    benefit: 'On your action, before making attack rolls for a round, you may choose to subtract a number from all melee attack rolls and add the same number to all melee damage rolls. This number may not exceed your base attack bonus.',
+    special: '',
+  },
+  {
+    name: 'Precise Shot',
+    prerequisites: 'Point Blank Shot',
+    benefit: 'You can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard –4 penalty on your attack roll.',
+    special: '',
+  },
+  {
+    name: 'Quick Draw',
+    prerequisites: 'BAB +1',
+    benefit: 'You can draw a weapon as a free action instead of as a move action.',
+    special: '',
+  },
+  {
+    name: 'Quicken Spell',
+    prerequisites: 'None',
+    benefit: 'Casting a quickened spell is a free action. You can only cast one quickened spell per round.',
+    special: 'A quickened spell uses up a spell slot four levels higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Rapid Reload',
+    prerequisites: 'Proficiency with crossbow type chosen',
+    benefit: 'The time required for you to reload your chosen type of crossbow is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow).',
+    special: 'You can take this feat multiple times. Each time you take the feat, it applies to a new type of crossbow.',
+  },
+  {
+    name: 'Rapid Shot',
+    prerequisites: 'Dex 13, Point Blank Shot',
+    benefit: 'You can get one extra attack per round with a ranged weapon. The attack is at your highest base attack bonus, but each attack you make in that round (the extra one and the normal ones) takes a –2 penalty.',
+    special: '',
+  },
+  {
+    name: 'Ride-By Attack',
+    prerequisites: 'Ride 1 rank, Mounted Combat',
+    benefit: 'When you are mounted and use the charge action, you may move and attack as if with a standard charge and then continue moving.',
+    special: '',
+  },
+  {
+    name: 'Run',
+    prerequisites: 'None',
+    benefit: 'When running, you move five times your normal speed. If you make a jump after a running start, you receive a +4 bonus on your Jump check.',
+    special: '',
+  },
+  {
+    name: 'Scribe Scroll',
+    prerequisites: 'Caster level 1st',
+    benefit: 'You can create a scroll of any spell that you know. Scribing a scroll takes one day for each 1,000 gp in its base price.',
+    special: '',
+  },
+  {
+    name: 'Self-Sufficient',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on all Heal checks and Survival checks.',
+    special: '',
+  },
+  {
+    name: 'Shield Proficiency',
+    prerequisites: 'None',
+    benefit: 'You can use a shield and take only the standard penalties.',
+    special: '',
+  },
+  {
+    name: 'Silent Spell',
+    prerequisites: 'None',
+    benefit: 'A silent spell can be cast with no verbal components.',
+    special: 'A silent spell uses up a spell slot one level higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Simple Weapon Proficiency',
+    prerequisites: 'None',
+    benefit: 'You make attack rolls with simple weapons normally.',
+    special: '',
+  },
+  {
+    name: 'Skill Focus',
+    prerequisites: 'None',
+    benefit: 'You get a +3 bonus on all checks involving the chosen skill.',
+    special: 'You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new skill.',
+  },
+  {
+    name: 'Snatch Arrows',
+    prerequisites: 'Dex 15, Deflect Arrows, Improved Unarmed Strike',
+    benefit: 'When using the Deflect Arrows feat you may catch the weapon instead of just deflecting it. Thrown weapons can immediately be thrown back as an attack against the original attacker (even though it isn\'t your turn) or kept.',
+    special: '',
+  },
+  {
+    name: 'Spell Focus',
+    prerequisites: 'None',
+    benefit: 'Add +1 to the Difficulty Class for all saving throws against spells from the school of magic you select.',
+    special: 'You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.',
+  },
+  {
+    name: 'Spell Mastery',
+    prerequisites: 'Wizard level 1st',
+    benefit: 'Each time you take this feat, choose a number of spells equal to your Intelligence modifier that you already know. From that point on, you can prepare these spells without referring to a spellbook.',
+    special: '',
+  },
+  {
+    name: 'Spell Penetration',
+    prerequisites: 'None',
+    benefit: 'You get a +2 bonus on caster level checks (1d20 + caster level) made to overcome a creature\'s spell resistance.',
+    special: '',
+  },
+  {
+    name: 'Spirited Charge',
+    prerequisites: 'Ride 1 rank, Mounted Combat, Ride-By Attack',
+    benefit: 'When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance).',
+    special: '',
+  },
+  {
+    name: 'Spring Attack',
+    prerequisites: 'Dex 13, Dodge, Mobility, BAB +4',
+    benefit: 'When using the attack action with a melee weapon, you can move both before and after the attack, provided that your total distance moved is not greater than your speed.',
+    special: '',
+  },
+  {
+    name: 'Still Spell',
+    prerequisites: 'None',
+    benefit: 'A stilled spell can be cast with no somatic components.',
+    special: 'A stilled spell uses up a spell slot one level higher than the spell\'s actual level.',
+  },
+  {
+    name: 'Stunning Fist',
+    prerequisites: 'Dex 13, Wis 13, Improved Unarmed Strike, BAB +8',
+    benefit: 'You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 + 1/2 your character level + your Wis modifier), in addition to dealing damage normally.',
+    special: 'A monk may attempt a stunning attack a number of times per day equal to his monk level, plus one more time per day for every four levels he has in classes other than monk.',
+  },
+  {
+    name: 'Toughness',
+    prerequisites: 'None',
+    benefit: 'You gain +3 hit points.',
+    special: 'You can gain this feat multiple times. Its effects stack.',
+  },
+  {
+    name: 'Track',
+    prerequisites: 'None',
+    benefit: 'You can use the Survival skill to follow tracks.',
+    special: '',
+  },
+  {
+    name: 'Trample',
+    prerequisites: 'Ride 1 rank, Mounted Combat',
+    benefit: 'When you attempt to overrun an opponent while mounted, your target may not choose to avoid you. Your mount may make one hoof attack against any target you knock down, gaining the standard +4 bonus on attack rolls against prone targets.',
+    special: '',
+  },
+  {
+    name: 'Two-Weapon Defense',
+    prerequisites: 'Dex 15, Two-Weapon Fighting',
+    benefit: 'When wielding a double weapon or two weapons (not including natural weapons or unarmed strikes), you gain a +1 shield bonus to your AC.',
+    special: '',
+  },
+  {
+    name: 'Two-Weapon Fighting',
+    prerequisites: 'Dex 15',
+    benefit: 'Your penalties on attack rolls for fighting with two weapons are reduced. The penalty for your primary hand lessens by 2 and the one for your off hand lessens by 6.',
+    special: '',
+  },
+  {
+    name: 'Weapon Finesse',
+    prerequisites: 'BAB +1',
+    benefit: 'With a light weapon, elven curve blade, rapier, whip, or spiked chain made for a creature of your size category, you may use your Dexterity modifier instead of your Strength modifier on attack rolls.',
+    special: '',
+  },
+  {
+    name: 'Weapon Focus',
+    prerequisites: 'Proficiency with selected weapon, BAB +1',
+    benefit: 'You gain a +1 bonus on all attack rolls you make using the selected weapon.',
+    special: 'You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.',
+  },
+  {
+    name: 'Weapon Specialization',
+    prerequisites: 'Proficiency with selected weapon, Weapon Focus with selected weapon, Fighter level 4th',
+    benefit: 'You gain a +2 bonus on all damage rolls you make using the selected weapon.',
+    special: 'You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.',
+  },
+  {
+    name: 'Whirlwind Attack',
+    prerequisites: 'Dex 13, Int 13, Combat Expertise, Dodge, Mobility, Spring Attack, BAB +4',
+    benefit: 'When you use the full-attack action, you can give up your regular attacks and instead make one melee attack at your full base attack bonus against each opponent within reach.',
+    special: '',
+  },
+  {
+    name: 'Widen Spell',
+    prerequisites: 'None',
+    benefit: 'You can alter a burst, emanation, line, or spread shaped spell to increase its area. Any numeric measurements of the spell\'s area increase by 100%.',
+    special: 'A widened spell uses up a spell slot three levels higher than the spell\'s actual level.',
+  },
+];
+
+export function getFeatByName(name: string): FeatDefinition | undefined {
+  return CORE_FEATS.find(f => f.name.toLowerCase() === name.toLowerCase());
+}
+
+export function searchFeats(query: string): FeatDefinition[] {
+  const q = query.toLowerCase();
+  return CORE_FEATS.filter(
+    f =>
+      f.name.toLowerCase().includes(q) ||
+      f.benefit.toLowerCase().includes(q) ||
+      f.prerequisites.toLowerCase().includes(q),
+  );
+}
