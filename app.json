@@ -32,12 +32,6 @@
     "plugins": [
       "expo-router",
       "expo-font",
-      [
-        "expo-sqlite",
-        {
-          "enableFTS": true
-        }
-      ],
       "expo-secure-store",
       "expo-av"
     ],

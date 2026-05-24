@@ -70,7 +70,9 @@ export const useInventoryStore = create<InventoryState>((set, get) => ({
 
   removeItem: async (id: string) => {
     try {
-      await deleteInventoryItem(id);
+      const { items } = get();
+      const item = items.find(i => i.id === id);
+      if (item) await deleteInventoryItem(id, item.characterId);
       set(state => ({ items: state.items.filter(i => i.id !== id) }));
     } catch (e) {
       set({ error: String(e) });
